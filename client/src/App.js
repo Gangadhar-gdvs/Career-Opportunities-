@@ -7,6 +7,7 @@ import Login from "./components/login";
 function App() {
   return (
     <Router>
+      <div>
       <MDBContainer className="d-flex flex-column align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
         
         {/* Define Routes */}
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </MDBContainer>
+      </div>
     </Router>
   );
 }
