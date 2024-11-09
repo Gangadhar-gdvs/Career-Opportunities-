@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Routes, Route ,Navigate } from "react-router-d
 import {  MDBContainer } from "mdb-react-ui-kit";
 import Register from "./components/Register";
 import Login from "./components/login";
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className="container">
       <MDBContainer className="d-flex flex-column align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
         
         {/* Define Routes */}

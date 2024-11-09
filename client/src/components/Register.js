@@ -58,13 +58,19 @@ function Register() {
 
   return (
     <MDBContainer fluid>
-      <MDBCard className="text-black m-5" style={{ borderRadius: "25px" }}>
+      <MDBCard className="text-black m-5" style={{ borderRadius: "30px" }}>
         <MDBCardBody>
           <form onSubmit={onSubmit}>
             <MDBRow>
               <MDBCol md="10" lg="6" className="order-2 order-lg-1 d-flex flex-column align-items-center">
-                <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
+                    <img 
+                        src={`${process.env.PUBLIC_URL}/care.ico`} 
+                        alt="Icon" 
+                        style={{ width: '50px', height: '50px', marginRight: '12px' }} // Increased icon size
+                      />
+                      <p className="text-center h1 fw-bold mb-0">Sign up</p>
+                </div>
                 <div className="d-flex flex-row align-items-center mb-4">
                   <MDBIcon fas icon="user me-3" size="lg" />
                   <MDBInput

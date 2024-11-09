@@ -58,17 +58,21 @@ function Login() {
 
   return (
     <MDBContainer fluid>
-      <MDBCard className="text-black m-5" style={{ borderRadius: "25px" }}>
+      <MDBCard className="text-black m-5" style={{ borderRadius: "30px" }}>
         <MDBCardBody>
           <MDBRow>
             <MDBCol
               md="10"
               lg="6"
-              className="order-2 order-lg-1 d-flex flex-column align-items-center"
-            >
-              <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                Login
-              </p>
+              className="order-2 order-lg-1 d-flex flex-column align-items-center">
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
+                    <img 
+                        src={`${process.env.PUBLIC_URL}/care.ico`} 
+                        alt="Icon" 
+                        style={{ width: '50px', height: '50px', marginRight: '12px' }} // Increased icon size
+                      />
+                      <p className="text-center h1 fw-bold mb-0">Sign in</p>
+                </div>
 
               {error && (
                 <div className="alert alert-danger" role="alert">
