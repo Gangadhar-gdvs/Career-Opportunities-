@@ -10,7 +10,6 @@ import {
   MDBCardImage,
   MDBInput,
   MDBIcon,
-  MDBCheckbox,
 } from "mdb-react-ui-kit";
 
 function Register() {
@@ -18,15 +17,14 @@ function Register() {
     name: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    subscribe: false,
+    confirmPassword: ''
   });
 
   const onChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value} = e.target;
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: value,
     });
   };
 
@@ -117,16 +115,6 @@ function Register() {
                     value={formData.confirmPassword}
                     onChange={onChange}
                     required
-                  />
-                </div>
-
-                <div className="mb-4">
-                  <MDBCheckbox
-                    name="subscribe"
-                    checked={formData.subscribe}
-                    onChange={onChange}
-                    id="flexCheckDefault"
-                    label="Subscribe to our newsletter"
                   />
                 </div>
 

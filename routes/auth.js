@@ -6,11 +6,7 @@ const router = express.Router();
 
 // Register route
 router.post('/register', async (req, res) => {
-  const { name, email, password, subscribe } = req.body;
-
-  console.log('Register route hit');
-  console.log('Request Body:', req.body);  // Log the body of the incoming request
-
+  const { name, email, password } = req.body;
   try {
     const userExists = await User.findOne({ email });
     if (userExists) return res.status(400).json({ message: 'User already exists' });
@@ -20,8 +16,7 @@ router.post('/register', async (req, res) => {
     const newUser = new User({
       name,
       email,
-      password: hashedPassword,
-      subscribe,
+      password: hashedPassword
     });
 
     await newUser.save();
@@ -35,9 +30,6 @@ router.post('/register', async (req, res) => {
 // Login route
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
-
-  console.log('Login route hit');
-  console.log('Request Body:', req.body);  // Log the body of the incoming request
 
   try {
     const user = await User.findOne({ email });
